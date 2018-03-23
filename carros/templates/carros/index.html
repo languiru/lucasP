@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Carros</title>
+</head>
+<body>
+{% if carros %}
+<table id="di" tabela_carros class= "table table-striped">
+  <thead>
+    <tr>
+        <th scope="col">codigo</th>
+      <th scope="col"> nome do carro </th>
+    </tr>
+    <thead>
+  <tbody>
+{% for carro in carros %}
+    </tr>
+        <th>{{forloop.counter}}</th>
+<th><a href="/{{carro.id}}">
+         {{carro.nome}}</a></th>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+
+    <h3> nenhum carro cadastrado </h3>
+{% endif %}
+
+</body>
+</html>
